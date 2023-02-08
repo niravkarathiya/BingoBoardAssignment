@@ -1,0 +1,62 @@
+.container {
+    text-align: center;
+    box-shadow: 5px 5px 5px gray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+span {
+    font-size: xx-large;
+    color: cadetblue;
+}
+
+.board {
+    text-align: center;
+}
+
+table {
+    margin: 10px auto 5px auto;
+    background-color: lightgrey;
+}
+
+td {
+    width: 100px;
+    line-height: 50px;
+}
+
+.btn-list {
+    margin-top: 10px;
+    padding: auto;
+}
+
+button {
+    margin: 5px 5px 5px 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.start {
+    background-color: cadetblue;
+}
+
+.refresh {
+    background-color: cadetblue;
+}
+
+.test {
+    background-color: red;
+}
+
+.checked {
+    background-color: rgb(6, 62, 64);
+    color: white;
+}
+
+.start:disabled {
+    background-color: #5f9ea080;
+    border: none;
+}

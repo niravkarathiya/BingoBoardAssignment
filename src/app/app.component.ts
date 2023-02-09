@@ -8,7 +8,6 @@ import { map, Subscription, timer } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'BingoBoardAssignment';
-  randomNumbers: number[] = [];
   timerSubscription = new Subscription;
   random = 0;
   matrix: any[] = [];
@@ -16,7 +15,7 @@ export class AppComponent implements OnInit {
   check = 0;
 
   ngOnInit() {
-    this.makeMatrix();
+    this.generateMatrix();
   }
 
   generateNumber() {
@@ -29,14 +28,13 @@ export class AppComponent implements OnInit {
 
   startGame() {
     this.check = 0;
-    this.timerSubscription = timer(0, 50).pipe(
+    this.timerSubscription = timer(0, 500).pipe(
       map(() => {
         this.generateNumber();
         const data = document.getElementById(this.random.toString());
         if (data && !data.classList.contains('checked')) {
           data.classList.add('checked');
           this.check++;
-          console.log(this.check)
           if (this.check === 25) {
             this.refreshGame();
             this.timerSubscription.unsubscribe();
@@ -50,7 +48,7 @@ export class AppComponent implements OnInit {
   refreshGame() {
     this.check = 0;
     this.matrix = [];
-    this.makeMatrix();
+    this.generateMatrix();
     this.timerSubscription.unsubscribe();
     this.random = 0;
   }
@@ -59,7 +57,7 @@ export class AppComponent implements OnInit {
     return Math.floor((Math.random() * (Max - Min)) + Min);
   }
 
-  makeMatrix() {
+  generateMatrix() {
     let column: any[] = [];
     let previousNumber: any[] = [];
     for (let j = 1; j < 6; j++) {

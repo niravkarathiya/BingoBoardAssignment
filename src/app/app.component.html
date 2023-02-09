@@ -1,6 +1,6 @@
 <div class="container">
     <div class="banner">
-        <span>Bingo Board</span>
+        <span class="banner-title">Bingo Board</span>
     </div>
     <div *ngIf="random">
         <h3>{{random}}</h3>
@@ -20,7 +20,7 @@
             <button class="refresh" (click)="refreshGame()">Refresh</button>
         </div>
         <div class="banner" *ngIf="check === 25">
-            <span>You are winner :)</span>
+            <span class="banner-title">You are winner :)</span>
         </div>
     </div>
 </div>

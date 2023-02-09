@@ -4,7 +4,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-span {
+.banner-title {
     font-size: xx-large;
     color: cadetblue;
 }
@@ -37,18 +37,7 @@ button {
     cursor: pointer;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.start {
     background-color: cadetblue;
-}
-
-.refresh {
-    background-color: cadetblue;
-}
-
-.test {
-    background-color: red;
 }
 
 .checked {

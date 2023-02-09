@@ -28,23 +28,27 @@ export class AppComponent implements OnInit {
   }
 
   startGame() {
-    this.timerSubscription = timer(0, 500).pipe(
+    this.check = 0;
+    this.timerSubscription = timer(0, 50).pipe(
       map(() => {
         this.generateNumber();
         const data = document.getElementById(this.random.toString());
         if (data && !data.classList.contains('checked')) {
           data.classList.add('checked');
           this.check++;
+          console.log(this.check)
           if (this.check === 25) {
-            this.random = 0;
+            this.refreshGame();
             this.timerSubscription.unsubscribe();
+            this.random = 0;
           }
         }
       })
     ).subscribe();
   }
 
-  stopGame() {
+  refreshGame() {
+    this.check = 0;
     this.matrix = [];
     this.makeMatrix();
     this.timerSubscription.unsubscribe();

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="banner">
+        <span class="banner-title">Bingo Board</span>
+    </div>
+    <div *ngIf="random">
+        <h3>{{random}}</h3>
+    </div>
+    <div class="board">
+        <table>
+            <tbody>
+                <tr *ngFor="let column of matrix; let i= index;">
+                    <td *ngFor="let number of column; let j = index;" [id]="matrix[j][i]">
+                        {{matrix[j][i]}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-list">
+            <button class="start" (click)="startGame()" [disabled]="random">Start</button>
+            <button class="refresh" (click)="refreshGame()">Refresh</button>
+        </div>
+        <div class="banner" *ngIf="check === 25">
+            <span class="banner-title">You are winner :)</span>
+        </div>
+    </div>
+</div>
